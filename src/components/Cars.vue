@@ -6,7 +6,7 @@
     <h3>{{ car.brand}}</h3>
     {{car.model}}
      {{car.year}}
-       {{car.maxSpeed}}
+       {{car.maxSpeed}} <router-link :to="`/edit/${car.id}`">Edit</router-link>
   </div>
 </div>
   </div>

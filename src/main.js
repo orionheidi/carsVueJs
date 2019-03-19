@@ -15,6 +15,7 @@ Vue.config.productionTip = false
 const routes = [
   { path: '/cars', component:Cars,props:true},
   { path: '/add', component:AddCar,props:true},
+  { path: '/edit/:id', component:AddCar,props:true},
   
 ]
 

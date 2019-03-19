@@ -57,6 +57,11 @@ export default class CarService {
     return httpService.post('/cars',car);
   }
 
+  getId(id){
+    return httpService.get('/cars/'+id);
+}
+
+
 
   // find(id) {
   //   return customers.find(customer => customer.id == id);
