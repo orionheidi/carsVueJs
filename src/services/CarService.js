@@ -46,9 +46,16 @@ export default class CarService {
     return httpService.get('/cars');
 }
 
-  // create (car){
-  //   return httpService.post('/api/cars',car);
+  // add(car) {
+  //   // car.id = nextId
+  //   cars.push(car)
+  //   // nextId++
   // }
+
+
+  create (car){
+    return httpService.post('/cars',car);
+  }
 
 
   // find(id) {

@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import Cars from './components/Cars.vue'
-import Cars from './components/Cars.vue'
+import AddCar from './components/AddCar.vue'
 // import 'bootstrap'
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -14,6 +14,7 @@ Vue.config.productionTip = false
 
 const routes = [
   { path: '/cars', component:Cars,props:true},
+  { path: '/add', component:AddCar,props:true},
   
 ]
 

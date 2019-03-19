@@ -10,9 +10,9 @@ class HttpService {
         return http.get(url);
     }
 
-    // post(url,body){
-    //     return http.post(url,body)
-    // }
+    post(url,body){
+        return http.post(url,body)
+    }
 
 }
 

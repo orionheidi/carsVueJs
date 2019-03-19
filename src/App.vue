@@ -2,17 +2,18 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <router-link to="/cars">Cars </router-link>
+    <router-link to="/add">Add</router-link>
     <router-view />
   </div>
 </template>
 
 <script>
  import Cars from './components/Cars.vue'
+ import AddCar from './components/AddCar.vue'
 
 export default {
   name: 'app',
   components: {
-    Cars
   }
 }
 </script>
