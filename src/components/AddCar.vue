@@ -57,9 +57,8 @@ export default {
     return {
 
       car: {},
-      cars: [],
-      // car2: {}
-    //   selected: false      
+      // cars: [],
+         
 
     }
   },
@@ -104,11 +103,10 @@ export default {
     //   this.cars = data;
    
       // console.log('Id of a car' + this.id)
-      const {data: newCar} = await carService.edit(this.car);
-  
-      // carService.edit(this.car)
+      const {data: newCar2} = await carService.edit(this.car);
+      // this.car = {}
       // this.car = newCar2;
-      console.log(newCar);
+      console.log(newCar2);
       this.$router.push('/cars')
 
 

@@ -67,7 +67,7 @@ export default class CarService {
   // }
 
   edit(car) {
-    return httpService.put(`cars/${id}`, car)
+    return httpService.put(`cars/${car.id}`, car)
     }
 
     remove (id) {

@@ -8,7 +8,8 @@
      {{car.year}}
      {{ car.isAutomatic }}
      {{ car.engine }}
-       {{car.maxSpeed}} <router-link :to="`/edit/${car.id}`">Edit</router-link>
+       {{car.maxSpeed}} <router-link class="btn btn-danger" :to="`/edit/${car.id}`">Edit</router-link>
+      &nbsp
       <button class="btn btn-danger" @click="onDelete(car)">Delete</button>
   </div>
 </div>
