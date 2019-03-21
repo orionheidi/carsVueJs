@@ -14,7 +14,9 @@ class HttpService {
         return http.post(url,body)
     }
 
-
+    put(url,body){
+        return http.put(url,body)
+    }
 
 }
 

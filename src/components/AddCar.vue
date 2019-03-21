@@ -4,7 +4,7 @@
        <hr/>
     <div class="row">
       <div class="col-sm-4">
-        <form @submit.prevent="addCar">
+        <form @submit.prevent="onSubmit">
           <div class="form-group">
             <label for="name">Brand</label>
             <input v-model="car.brand" type="text" class="form-control" id="brand" placeholder="Enter brand" minlength="2" required="required">
@@ -41,7 +41,7 @@
         <label for="hubryd">Hybrid</label>
         <br>
           <button type="submit" class="btn btn-primary">Submit</button><br>
-          <button type="submit" @click="edit" class="btn btn-primary">Edit</button>
+          <!-- <button type="submit" @submit.prevent="edit" class="btn btn-primary">Edit</button> -->
         <button type="reset" class="btn btn-primary" @click="resetField">Reset</button>
          <button @click="preview">Show car</button>
         </form>
@@ -57,15 +57,30 @@ export default {
     return {
 
       car: {},
-        cars: []
-    //   selected: false
-    //   customers: customerService.list()
-      
+      cars: [],
+      // car2: {}
+    //   selected: false      
 
     }
   },
+    created () {
+    this.$route.params.id && carService.get(this.$route.params.id)
+      .then((response) => {
+        this.car = response.data
+      })
+  },
+  // props: ['id'],
 
   methods:{
+   onSubmit () {
+      if (this.car.id) {
+        console.log('baba')
+        this.edit()
+      } else {
+        console.log('deda')
+        this.addCar()
+      }
+    },
   async addCar(){
       console.log('hej')
     try{
@@ -75,10 +90,7 @@ export default {
       const {data: newCar} = await carService.create(this.car);
       this.car = {}
       console.log(newCar);
-      this.$router.push('/cars')
-    
-
-    
+      this.$router.push('/cars')   
 
     }catch(error){
       console.log(error);
@@ -86,14 +98,17 @@ export default {
     
   },
   async edit(){
-      console.log('hej')
+      console.log('hej edit')
     try{
     //   const {data} = await carService.getAll();
     //   this.cars = data;
    
-      const {data: newCar2} = await carService.getId(this.car.id);
-      this.car = {}
-      console.log(newCar2);
+      // console.log('Id of a car' + this.id)
+      const {data: newCar} = await carService.edit(this.car);
+  
+      // carService.edit(this.car)
+      // this.car = newCar2;
+      console.log(newCar);
       this.$router.push('/cars')
 
 

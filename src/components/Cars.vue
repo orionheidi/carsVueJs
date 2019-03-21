@@ -6,7 +6,10 @@
     <h3>{{ car.brand}}</h3>
     {{car.model}}
      {{car.year}}
+     {{ car.isAutomatic }}
+     {{ car.engine }}
        {{car.maxSpeed}} <router-link :to="`/edit/${car.id}`">Edit</router-link>
+      <button class="btn btn-danger" @click="onDelete(car)">Delete</button>
   </div>
 </div>
   </div>

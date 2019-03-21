@@ -2,6 +2,7 @@ import {httpService} from './HttpService';
 
 const cars = [
     {
+      id: '',
       brand: "Merdza",
       model: "Fab",
       year: 2013,
@@ -12,7 +13,7 @@ const cars = [
 
     },
     {
-      
+      id: '',
       brand: "Suzuki",
       model: "Fab 4",
       year: 2018,
@@ -23,7 +24,7 @@ const cars = [
 
     },
     {
-      
+      id: '',
       brand: "Mazda",
       model: "Fab",
       year: 2013,
@@ -57,10 +58,22 @@ export default class CarService {
     return httpService.post('/cars',car);
   }
 
-  getId(id){
-    return httpService.get('/cars/'+id);
+  get(id){
+    return httpService.get(`cars/${id}`);
 }
 
+  // edit(car) {
+  // return httpService.put('/cars/'+ id, car)
+  // }
+
+  edit(car) {
+    return httpService.put(`cars/${id}`, car)
+    }
+
+    remove (id) {
+      return httpService.delete(`cars/${car.id}`)
+    }
+  
 
 
   // find(id) {
